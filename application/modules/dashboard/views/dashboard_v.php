@@ -89,22 +89,21 @@ $nik = $this->session->userdata('nik');
 		</div>
 	</div>
 </div>
-<?php 
+<?php
 $flashmessage = $this->session->flashdata('message');
 if (!empty($flashmessage)) {
 ?>
     <script type="text/javascript">
-        $(document).ready(function(){ 
+        $(document).ready(function(){
             $.gritter.add({
                 // (string | mandatory) the heading of the notification
                 title: 'Pemberitahuan',
                 // (string | mandatory) the text inside the notification
                 text: '<?=$flashmessage?>'
             });
-
             return false;
         });
-    </script>   
+    </script>
 <?php
 }
 ?>
