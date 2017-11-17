@@ -276,4 +276,25 @@ class Diklat extends MY_Controller {
 	        $data['content'] = 'fields/excel_v';
 	        $contents = $this->load->view($data['content'],$data);
 		}
+
+		function download($id){
+			$this->load->helper('download');
+			$detail = $this->diklat_m->get_row(['id_diklat' => $id]);
+			if (!isset($id) || !isset($detail)) {
+				redirect('diklat');
+				exit;
+			}
+			$file = $detail->file_sertifikat;
+			$data = file_get_contents(FCPATH.'uploads/diklat/'.$file.''); // Read the file's contents
+			$name = $file;
+
+			if (force_download($name, $data)) {
+				# code...
+			} else {
+				# code...
+				$this->session->set_flashdata('message', 'File tidak ditemukan');
+				redirect('diklat','refresh');
+				exit;
+			}
+		}
 }

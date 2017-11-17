@@ -150,7 +150,7 @@ $nik = $this->session->userdata('nik');
                                         <?= (isset($post['waktu_alert'])) ? date("d-m-Y", strtotime($post['waktu_alert'])) : "";?>
                                     </td>
                                     <td class="list-item">
-                                        <?= ($post['file_sertifikat'] != "") ? anchor('diklat/download/'.$post['id_diklat'].'/list', substr($post['file_sertifikat'], 0, 20)."", array('class' => '"')) : '';?>
+                                        <?= ($post['file_sertifikat'] != "") ? anchor('diklat/download/'.$post['id_diklat'], substr($post['file_sertifikat'], 0, 20)."", array('class' => '"')) : '';?>
                                     </td>
                                     <td class="list-item" <?= ($level == "2") ? "hidden" : "" ?>>
                                         <?=anchor('diklat/ubah/'.$post['id_diklat'].'', '<i class="icon-wrench"></i> Edit', array('class' => 'btn btn-sm btn-outline-warning"'));?><br>&nbsp;

@@ -268,4 +268,25 @@ class Assessment extends MY_Controller {
 	        $data['content'] = 'fields/excel_v';
 	        $contents = $this->load->view($data['content'],$data);
 		}
+
+		function download($id){
+			$this->load->helper('download');
+			$detail = $this->assessment_m->get_row(['id_assesment' => $id]);
+			if (!isset($id) || !isset($detail)) {
+				redirect('assesment');
+				exit;
+			}
+			$file = $detail->file_evidence;
+			$data = file_get_contents(FCPATH.'uploads/assessment/'.$file.''); // Read the file's contents
+			$name = $file;
+
+			if (force_download($name, $data)) {
+				# code...
+			} else {
+				# code...
+				$this->session->set_flashdata('message', 'File tidak ditemukan');
+				redirect('assessment','refresh');
+				exit;
+			}
+		}
 }
