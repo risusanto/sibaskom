@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2017 at 12:04 PM
+-- Generation Time: Nov 17, 2017 at 02:40 PM
 -- Server version: 5.7.17-log
 -- PHP Version: 7.0.21
 
@@ -126,6 +126,14 @@ CREATE TABLE `penugasan` (
   `proyeksi` varchar(255) DEFAULT NULL,
   `waktu_alert` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `penugasan`
+--
+
+INSERT INTO `penugasan` (`id_penugasan`, `nip`, `nama`, `unit`, `lokasi_penugasan`, `tanggal_awal_masa_penugasan`, `proyeksi`, `waktu_alert`) VALUES
+(1, '25', 'Ari Susanto', 'Palembang', 'Layo', '2017-11-18', '2018-11-18', '2018-10-18'),
+(2, '15', 'Irawan', 'Muara Enim', 'Palembang', '2017-11-22', '2018-11-22', '2017-10-22');
 
 -- --------------------------------------------------------
 
@@ -307,7 +315,7 @@ ALTER TABLE `fit_and_proper`
 -- AUTO_INCREMENT for table `penugasan`
 --
 ALTER TABLE `penugasan`
-  MODIFY `id_penugasan` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penugasan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `sertifikat`
 --
