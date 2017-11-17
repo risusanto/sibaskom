@@ -110,7 +110,7 @@ $nik = $this->session->userdata('nik');
                             <th width="" style="vertical-align: middle;">Unit</th>
                             <th width="" style="vertical-align: middle;">Lokasi Penugasan</th>
                             <th width="" style="vertical-align: middle;">Tanggal Awal Masa Penugasan</th>
-                            <th width="" style="vertical-align: middle;">Proyeksi</th>
+                            <th width="" style="vertical-align: middle;">Lama Penugasan</th>
                             <th width="" style="vertical-align: middle;">Waktu Alert</th>
                             <th width="" style="vertical-align: middle;" <?= ($level == "2") ? "hidden" : "" ?>></th>
                         </tr>
@@ -134,7 +134,7 @@ $nik = $this->session->userdata('nik');
                                         <?= (isset($post['tanggal_awal_masa_penugasan'])) ? date("d-m-Y", strtotime($post['tanggal_awal_masa_penugasan'])) : ""; ?>
                                     </td>
                                     <td class="list-item">
-                                        <?= (isset($post['proyeksi'])) ? date("d-m-Y", strtotime($post['proyeksi'])) : "";?>
+                                    <?= $post['lama_penugasan']; ?>
                                     </td>
                                     <td class="list-item">
                                         <?= (isset($post['waktu_alert'])) ? date("d-m-Y", strtotime($post['waktu_alert'])) : "";?>

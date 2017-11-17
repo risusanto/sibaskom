@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 17, 2017 at 02:40 PM
+-- Generation Time: Nov 18, 2017 at 02:08 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 7.0.21
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sibaskom_sertifikat`
+-- Database: `db_sibaskom`
 --
 
 -- --------------------------------------------------------
@@ -39,6 +39,17 @@ CREATE TABLE `assesment` (
   `file_evidence` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `assesment`
+--
+
+INSERT INTO `assesment` (`id_assesment`, `nip`, `nama`, `unit`, `tanggal_awal_berlaku`, `tanggal_akhir_berlaku`, `hasil_assesment`, `rekomendasi`, `waktu_alert`, `file_evidence`) VALUES
+(1, '15', 'Ari Susanto', 'Palembang', '2017-11-18', '2018-11-18', 'Baik', 'Waluyo', '2018-10-18', 'rumah.pdf'),
+(2, '25', 'Irawan', 'Muara Enim', '2017-11-10', '2018-11-10', 'baik', 'waluyojuga', '2018-10-10', 'haha.pdf'),
+(3, '19', 'Parno', 'Baturaja', '2017-11-29', '2018-02-07', 'Baik Sangad', 'Aris', '2017-12-05', 'CV_Ari.pdf'),
+(6, '90', 'Caroline', 'Palembang', '2017-11-17', '2017-12-09', 'Bagus', 'Wanto', '2017-12-08', NULL),
+(7, '90', 'Rizka Nabillah', 'Banyuasin', '2017-11-25', '2017-12-07', 'Baik', 'Ari', '2017-12-07', 'CV_Rizka.pdf');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +69,15 @@ CREATE TABLE `diklat` (
   `waktu_alert` date DEFAULT NULL,
   `file_sertifikat` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `diklat`
+--
+
+INSERT INTO `diklat` (`id_diklat`, `nip`, `nama`, `unit`, `tanggal_awal_berlaku`, `tanggal_akhir_berlaku`, `no_sertifikat`, `judul_diklat`, `lembaga_penyelenggara`, `waktu_alert`, `file_sertifikat`) VALUES
+(1, '15', 'Ari Susanto', 'Palembang', '2017-11-18', '2018-11-18', '1231', 'Diklat Aja', 'Telkom Indonesia', '2018-10-18', 'siari.pdf'),
+(2, '25', 'Irawan', 'Muara Enim', '2017-11-30', '2018-11-30', '1232', 'Diklat Kepemimpinan', 'Kab. Muara Enim', '2018-10-30', 'siirawan.pdf'),
+(3, '16', 'Caroline', 'Palembang', '2017-11-18', '2017-11-11', '888.1212.2121', 'Diklat Aja', 'PT Mau Tau Aja', '2017-11-24', 'CV_Rizka.pdf');
 
 -- --------------------------------------------------------
 
@@ -123,7 +143,7 @@ CREATE TABLE `penugasan` (
   `unit` varchar(255) DEFAULT NULL,
   `lokasi_penugasan` varchar(255) DEFAULT NULL,
   `tanggal_awal_masa_penugasan` date DEFAULT NULL,
-  `proyeksi` varchar(255) DEFAULT NULL,
+  `lama_penugasan` varchar(255) DEFAULT NULL,
   `waktu_alert` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -131,9 +151,9 @@ CREATE TABLE `penugasan` (
 -- Dumping data for table `penugasan`
 --
 
-INSERT INTO `penugasan` (`id_penugasan`, `nip`, `nama`, `unit`, `lokasi_penugasan`, `tanggal_awal_masa_penugasan`, `proyeksi`, `waktu_alert`) VALUES
-(1, '25', 'Ari Susanto', 'Palembang', 'Layo', '2017-11-18', '2018-11-18', '2018-10-18'),
-(2, '15', 'Irawan', 'Muara Enim', 'Palembang', '2017-11-22', '2018-11-22', '2017-10-22');
+INSERT INTO `penugasan` (`id_penugasan`, `nip`, `nama`, `unit`, `lokasi_penugasan`, `tanggal_awal_masa_penugasan`, `lama_penugasan`, `waktu_alert`) VALUES
+(1, '250', 'Ari Dfm Susanto', 'Gelumbang', 'Ogan Ilir', '2017-11-01', '2 Tahun', '2017-12-29'),
+(4, '14', 'Caroline', 'Palembang', 'Palembang', '2017-11-18', '1 tahun', '2017-11-25');
 
 -- --------------------------------------------------------
 
@@ -295,12 +315,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `assesment`
 --
 ALTER TABLE `assesment`
-  MODIFY `id_assesment` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_assesment` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `diklat`
 --
 ALTER TABLE `diklat`
-  MODIFY `id_diklat` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_diklat` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `email_notifikasi`
 --
@@ -315,7 +335,7 @@ ALTER TABLE `fit_and_proper`
 -- AUTO_INCREMENT for table `penugasan`
 --
 ALTER TABLE `penugasan`
-  MODIFY `id_penugasan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_penugasan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `sertifikat`
 --
