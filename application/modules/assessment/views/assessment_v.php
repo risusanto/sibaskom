@@ -144,8 +144,8 @@ $nik = $this->session->userdata('nik');
                                         <?= ($post['file_evidence'] != "") ? anchor('diklat/download/'.$post['id_diklat'].'/list', substr($post['file_evidence'], 0, 20)."", array('class' => '"')) : '';?>
                                     </td>
                                     <td class="list-item" <?= ($level == "2") ? "hidden" : "" ?>>
-                                        <?=anchor('assessment/ubah/'.$post['id_diklat'].'', '<i class="icon-wrench"></i> Edit', array('class' => 'btn btn-sm btn-outline-warning"'));?><br>&nbsp;
-                                        <?=anchor('assessment/hapus/'.$post['id_diklat'].'', '<i class="icon-trash"></i> Remove', array('class' => 'btn btn-sm btn-outline-danger"', 'onclick' => "return confirm('Tekan OK untuk melanjutkan penghapusan data')"));?>
+                                        <?=anchor('assessment/ubah/'.$post['id_assesment'].'', '<i class="icon-wrench"></i> Edit', array('class' => 'btn btn-sm btn-outline-warning"'));?><br>&nbsp;
+                                        <?=anchor('assessment/hapus/'.$post['id_assesment'].'', '<i class="icon-trash"></i> Remove', array('class' => 'btn btn-sm btn-outline-danger"', 'onclick' => "return confirm('Tekan OK untuk melanjutkan penghapusan data')"));?>
                                     </td>
                                 </tr>
 
