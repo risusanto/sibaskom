@@ -97,9 +97,6 @@ $nik = $this->session->userdata('nik');
                         <input type="text" id="nama_pegawai" name="nama_pegawai" class="form-control" placeholder="Nama Pegawai" <?= ($level == "2") ? "hidden" : "" ?>>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="masa_berlaku" name="masa_berlaku" class="form-control" placeholder="Masa Berlaku" <?= ($level == "2") ? "hidden" : "" ?>>
-                    </div>
-                    <div class="form-group">
                         <button type="button" class="btn btn-primary" onclick="searchFilter()"><i class="fa fa-dot-circle-o"></i> Search</button>
                         <button type="submit" class="btn btn-success" onclick="reportFilter()" <?= ($level == "2") ? "hidden" : "" ?>><i class="fa fa-file-excel-o"></i> Excel</button>
                     </div>
