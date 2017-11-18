@@ -1,0 +1,32 @@
+<table border="1">
+    <thead>
+        <tr>
+        <th style="vertical-align: middle;">NIP</th>
+        <th style="vertical-align: middle;">Nama</th>
+        <th style="vertical-align: middle;">Unit</th>
+        <th style="vertical-align: middle;">Lokasi Penugasan</th>
+        <th style="vertical-align: middle;">Tanggal Awal Masa Penugasan</th>
+        <th style="vertical-align: middle;">Lama Penugasan</th>
+        <th style="vertical-align: middle;">Waktu Alert</th>
+        </tr>
+    </thead>
+    <tbody>
+                            <tr>
+                    <td class="list-item">
+                        14                    </td>
+                    <td class="list-item">
+                        Caroline                    </td>
+                    <td class="list-item">
+                        Palembang                    </td>
+                    <td class="list-item">
+                        Palembang                    </td>
+                    <td class="list-item">
+                        18-11-2017                    </td>
+                    <td class="list-item">
+                    1 tahun                    </td>
+                    <td class="list-item">
+                        25-11-2017                    </td>
+                </tr>
+                <!-- <div ><a href="javascript:void(0);"><h2></h2></a></div> -->
+                </tbody>
+</table>
