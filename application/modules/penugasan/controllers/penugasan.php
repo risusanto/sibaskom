@@ -8,12 +8,13 @@ class Penugasan extends MY_Controller {
 		parent::__construct();
 		is_logged_in();
 		$this->load->library(array('form_validation', 'Ajax_pagination'));
-		$this->load->model('penugasan_m');
+		$this->load->model(['penugasan_m','email_notifikasi_m']);
 		$this->perPage = 5;
 	}
 
 	function index()
 	{
+		$this->checkExp();
 		$totalRec = count($this->penugasan_m->getRows());
 
 		//pagination configuration
@@ -208,6 +209,53 @@ class Penugasan extends MY_Controller {
 
 	        $data['content'] = 'fields/excel_v';
 	        $contents = $this->load->view($data['content'],$data);
+		}
+
+		function checkExp(){
+			$data['expired'] = $this->penugasan_m->get(['waktu_alert' => date('Y-m-d')]);
+			if (count($data['expired']) > 0) {	
+				foreach ($data['expired'] as $row) {
+					$this->send_notification($row->nama,$row->nip,$row->lokasi_penugasan);
+				}
+			}else{
+				echo '';
+			}
+		}
+
+		private function send_notification($nama,$nip,$lokasi){
+			$email = $this->email_notifikasi_m->get_row(['id_email_notifikasi' => 1]);
+			$this->load->library('my_phpmailer');
+			$mail = new PHPMailer();
+			$mail->IsSMTP();
+	        $mail->SMTPAuth   = true;
+	        $mail->SMTPSecure = "ssl";
+	        $mail->Host       = "smtp.zoho.com";
+	        $mail->Port       = 465;
+	        $mail->Username   = "noreply@techphoria.web.id";  //isi dengan email untuk mengirim
+	        $mail->Password   = "inipalsugantipassword"; //isi dengan password untuk mengirim
+	        $mail->SetFrom($mail->Username, 'Notifikasi SIMOPS');
+	        $mail->Subject    = 'Masa Penugasan Akan Berakhir';
+			$mail->Body       = 'Masa penugasan pegawai Nama: '.$nama.', NIP: '.$nip.', Lokasi Penugasan: '.$lokasi.', akan segera berakhir';
+			if ($email->email1 != '') {
+				$mail->AddAddress($email->email1);
+				$mail->Send();
+			}
+			if ($email->email2 != '') {
+				$mail->AddAddress($email->email2);
+				$mail->Send();
+			}
+			if ($email->email3 != '') {
+				$mail->AddAddress($email->email3);
+				$mail->Send();
+			}
+			if ($email->email4 != '') {
+				$mail->AddAddress($email->email14);
+				$mail->Send();
+			}
+			if ($email->email5 != '') {
+				$mail->AddAddress($email->email5);
+				$mail->Send();
+			}
 		}
 
 }
