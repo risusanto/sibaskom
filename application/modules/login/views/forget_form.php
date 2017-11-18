@@ -13,7 +13,7 @@
                     <div class="card p-2">
                     	<form action="<?= base_url() ?>index.php/login/sendResetPassword" method="post">
                             <div class="card-block">
-                                <h4>Sistem Database Sertifikasi dan Kompetensi (SI BASKOM)</h4>
+                                <h4>Sistem Informasi Monitoring Data Bidang Pengembangan SDM (SIMOPS)</h4>
                                 <p class="text-muted">Forget your account</p>
                                 <div class="input-group mb-1">
                                     <span class="input-group-addon"><i class="icon-user"></i>

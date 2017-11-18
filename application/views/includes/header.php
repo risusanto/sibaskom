@@ -11,7 +11,7 @@
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="<?= base_url() ?>assets/img/favicon.jpg">
 
-    <title>SI BASKOM | Sistem Database Sertifikasi dan Kompetensi</title>
+    <title>SIMOPS | Sistem Informasi Monitoring Data Bidang Pengembangan SDM</title>
 
     <!-- Icons -->
     <link href="<?= base_url() ?>assets/css/font-awesome.min.css" rel="stylesheet">
