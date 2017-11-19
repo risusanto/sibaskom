@@ -232,7 +232,7 @@ class Penugasan extends MY_Controller {
 	        $mail->Host       = "smtp.zoho.com";
 	        $mail->Port       = 465;
 	        $mail->Username   = "noreply@techphoria.web.id";  //isi dengan email untuk mengirim
-	        $mail->Password   = "inipalsugantipassword"; //isi dengan password untuk mengirim
+	        $mail->Password   = "minimal8"; //isi dengan password untuk mengirim
 	        $mail->SetFrom($mail->Username, 'Notifikasi SIMOPS');
 	        $mail->Subject    = 'Masa Penugasan Akan Berakhir';
 			$mail->Body       = 'Masa penugasan pegawai Nama: '.$nama.', NIP: '.$nip.', Lokasi Penugasan: '.$lokasi.', akan segera berakhir';

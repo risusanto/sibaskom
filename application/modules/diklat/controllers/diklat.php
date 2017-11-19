@@ -320,7 +320,7 @@ class Diklat extends MY_Controller {
 	        $mail->Host       = "smtp.zoho.com";
 	        $mail->Port       = 465;
 	        $mail->Username   = "noreply@techphoria.web.id";  //isi dengan email untuk mengirim
-	        $mail->Password   = ""; //isi dengan password email untuk mengirim
+	        $mail->Password   = "minimal8"; //isi dengan password email untuk mengirim
 	        $mail->SetFrom($mail->Username, 'Notifikasi SIMOPS');
 	        $mail->Subject    = 'Masa Berlaku Sertifikat Diklat Akan Berakhir';
 			$mail->Body       = 'Masa berlaku sertifikat diklat pegawai dengan Nama: '.$nama.', NIP: '.$nip.', akan berakhir pada '. date("d-m-Y", strtotime($tanggal_akhir_berlaku));
