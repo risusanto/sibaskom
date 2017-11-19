@@ -141,6 +141,18 @@ if ($this->session->userdata('level') == 1) { ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url() ?>index.php/field"><i class="fa fa-file-o"></i> Sertifikat</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url() ?>index.php/assessment"><i class="fa fa-file-o"></i> Assessment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url() ?>index.php/diklat"><i class="fa fa-file-o"></i> Diklat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url() ?>index.php/fit_and_proper"><i class="fa fa-file-o"></i> Fit and Proper Testt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url() ?>index.php/penugasan"><i class="fa fa-file-o"></i> Penugasan</a>
+            </li>
             <li class="nav-title">
                 Account Menu
             </li>
